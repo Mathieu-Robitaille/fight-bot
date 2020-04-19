@@ -32,11 +32,7 @@ move_types = {  'ra': 'Rage art',
                 'power_crush': 'Power crush'}
 
 # Get token from local txt file
-dirname, pyfilename = os.path.split(os.path.abspath(sys.argv[0]))
-tfilename = os.path.join(dirname, 'token.txt')
-
-with open(tfilename) as token_file:
-    token = token_file.read().strip()
+token = os.getenv('TOKEN')
 
 def move_embed(character, move):
     '''Returns the embed message for character and move'''
